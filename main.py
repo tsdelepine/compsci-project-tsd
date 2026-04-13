@@ -11,3 +11,16 @@ The 20-round structure gives you a clear game loop to work with. Consider adding
 after the core mechanics work.
 '''
 
+import random
+
+#Class: Player
+class Player:
+    def __init__(self):
+        self.coins = 10
+        self.score = 0
+    
+    def add_coins(self, amount):
+        self.coins += amount
+    
+    def add_score(self, amount):
+        self.score += amount
