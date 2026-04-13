@@ -11,6 +11,18 @@ The 20-round structure gives you a clear game loop to work with. Consider adding
 after the core mechanics work.
 '''
 
+#used google AI to find this code to verify pygame is working
+import pygame
+pygame.init()
+screen = pygame.display.set_mode((400, 300))
+pygame.display.set_caption("Pygame in VS Code")
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+pygame.quit()
+
 import random
 
 #Class: Player
