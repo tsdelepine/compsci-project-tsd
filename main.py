@@ -1,4 +1,5 @@
 '''
+#NOTES: feedback from class
 Smart decision to scale down from the roguelike concept. The gumball machine game has clear, achievable mechanics and a well-defined scope.
 Pygame is a good choice for this kind of visual, interactive project. The color-based gumball effects (yellow for coins, blue for 
 losing coins, red/green for points) give you clear game logic to implement.
@@ -10,4 +11,3 @@ The 20-round structure gives you a clear game loop to work with. Consider adding
 after the core mechanics work.
 '''
 
-print("test")
