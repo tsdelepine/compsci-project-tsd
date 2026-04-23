@@ -84,3 +84,39 @@ def load_high_score():
 def save_high_score(score):
     with open("highscore.txt", "r") as f:
         f.write(str(score))
+
+
+#------Game loop-----
+def main():
+    player = Player()
+    machine = Machine()
+    rounds = 0
+    high_score = load_high_score()
+
+    print("Welcome to my Game!")
+    print(f"High Score: {high_score}\n")
+
+    while player.coins > 0 and rounds < 20:
+        input("Press ENTER to play... COST: 1 coin")
+
+        player.add_coins(-1) #have to pay coins to play
+        gumball = machine.dispense()
+
+        print(f"\nYou got a {gumball.color} gumball!")
+        gumball.effect(player)
+
+        print(f"Coins: {player.coins} - Score: {player.score}\n")
+
+        rounds += 1
+
+    print("Game Over!")
+    print(f"Final Sore: {player.score}")
+
+    if player.score > high_score:
+        print("NEW HIGH SCORE!!!")
+        save_high_score(player.score)
+    else:
+        print(f"Current High Score is: {high_score}")
+
+if __name__ == "__main__":
+    main()
