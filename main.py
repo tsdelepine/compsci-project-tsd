@@ -72,4 +72,15 @@ class Machine:
     def big_score(self, player):
         player.add_score(20)
         print("Score increased by 20!")
-        
+
+#-----File I/O-----
+def load_high_score():
+    try:
+        with open("highscore.txt", "r") as f:
+            return int(f.read)
+    except:
+        return 0
+    
+def save_high_score(score):
+    with open("highscore.txt", "r") as f:
+        f.write(str(score))
