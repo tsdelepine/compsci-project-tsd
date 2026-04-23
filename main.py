@@ -37,11 +37,23 @@ class Player:
     def add_score(self, amount):
         self.score += amount
 
-#----- Class: Gumball-----
+#-----Class: Gumball-----
 class Gumball:
     def __init__(self, color, effect):
         self.color = color
         self.effect = effect
 
+#-----Class: GumballMachine-----
+class Machine:
+    def __init__(self):
+        self.gumballs = [
+            Gumball("Yellow", self.give_coins),
+            Gumball("Blue", self.lose_coins),
+            Gumball("Red", self.small_score),
+            Gumball("Green", self.big_score)
+        ]
+    
+    def dispense(self):
+        return random.choice(self.gumballs)
 
-
+#-----Effects-----
