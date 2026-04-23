@@ -57,3 +57,19 @@ class Machine:
         return random.choice(self.gumballs)
 
 #-----Effects-----
+    def give_coins(self, player):
+        player.add_coins(3)
+        print("You gained 3 coins!")
+    
+    def lose_coins(self, player):
+        player.add_coins(-2)
+        print("You lost 2 coins!")
+    
+    def small_score(self, player):
+        player.add_score(10)
+        print("Score increased by 10!")
+
+    def big_score(self, player):
+        player.add_score(20)
+        print("Score increased by 20!")
+        
