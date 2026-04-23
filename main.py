@@ -12,20 +12,20 @@ after the core mechanics work.
 '''
 
 #used google AI to find this code to verify pygame is working
-import pygame
-pygame.init()
-screen = pygame.display.set_mode((400, 300))
-pygame.display.set_caption("Pygame in VS Code")
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-pygame.quit()
+# import pygame
+# pygame.init()
+# screen = pygame.display.set_mode((400, 300))
+# pygame.display.set_caption("Pygame in VS Code")
+# running = True
+# while running:
+#     for event in pygame.event.get():
+#         if event.type == pygame.QUIT:
+#             running = False
+# pygame.quit()
 
 import random
 
-#Class: Player
+#-----Class: Player-----
 class Player:
     def __init__(self):
         self.coins = 10
@@ -36,3 +36,12 @@ class Player:
     
     def add_score(self, amount):
         self.score += amount
+
+#----- Class: Gumball-----
+class Gumball:
+    def __init__(self, color, effect):
+        self.color = color
+        self.effect = effect
+
+
+
