@@ -24,6 +24,7 @@ after the core mechanics work.
 # pygame.quit()
 
 import random
+import time
 
 #-----Class: Player-----
 class Player:
@@ -84,6 +85,29 @@ def load_high_score():
 def save_high_score(score):
     with open("highscore.txt", "w") as f:
         f.write(str(score))
+
+#-----UI and display / extra ideas-----
+def show_title():
+    print("=" * 50)
+    print("TEST YOUR LUCK WITH THE GUMBALL GAME".center(50))
+    print("=" * 50)
+    print("Enter a coin to collect points,")
+    print("but be weary of running out of coins!\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #------Game loop-----
