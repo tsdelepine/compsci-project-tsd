@@ -73,7 +73,7 @@ class Machine:
         player.add_score(20)
         print("Score increased by 20!")
 
-#-----File I/O-----
+#-----File I/O----- (USED AI TO HELP FIX ERRORS I COULDNT SEE)
 def load_high_score():
     try:
         with open("highscore.txt", "r") as f:
@@ -88,35 +88,45 @@ def save_high_score(score):
 
 #------Game loop-----
 def main():
-    player = Player()
-    machine = Machine()
-    rounds = 0
-    high_score = load_high_score()
+    while True:
 
-    print("Welcome to my Game!")
-    print(f"High Score: {high_score}\n")
+        player = Player()
+        machine = Machine()
+        rounds = 0
+        high_score = load_high_score()
 
-    while player.coins > 0 and rounds < 20:
-        input("Press ENTER to play... COST: 1 coin")
+        print("Welcome to my Game!")
+        print(f"High Score: {high_score}\n")
 
-        player.add_coins(-1) #have to pay coins to play
-        gumball = machine.dispense()
+        while player.coins > 0 and rounds < 20:
+            input("Press ENTER to play... COST: 1 coin")
 
-        print(f"\nYou got a {gumball.color} gumball!")
-        gumball.effect(player)
+            player.add_coins(-1) #have to pay coins to play
+            gumball = machine.dispense()
 
-        print(f"Coins: {player.coins} - Score: {player.score}\n")
+            print(f"\nYou got a {gumball.color} gumball!")
+            gumball.effect(player)
 
-        rounds += 1
+            print(f"Coins: {player.coins} - Score: {player.score}\n")
 
-    print("Game Over!")
-    print(f"Final Sore: {player.score}")
+            rounds += 1
 
-    if player.score > high_score:
-        print("NEW HIGH SCORE!!!")
-        save_high_score(player.score)
-    else:
-        print(f"Current High Score is: {high_score}")
+    #-----game over-----
+
+        print("Game Over!")
+        print(f"Final Sore: {player.score}")
+
+        if player.score > high_score:
+            print("NEW HIGH SCORE!!!")
+            save_high_score(player.score)
+        else:
+            print(f"Current High Score is: {high_score}")
+
+    #-----play again-----
+        choice = input("\nPlay Again? (y/n): ").lower()
+        if choice != 'y':
+            print("Thanks for Playing!")
+            break
 
 if __name__ == "__main__":
     main()
