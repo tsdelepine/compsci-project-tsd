@@ -99,6 +99,10 @@ def show_stats(player, rounds):
     print(f"Coins: {player.coins}   Score: {player.score}   Round: {rounds}/20")
     print("-" * 50)
 
+def show_gumball(color):
+    print("\n The Machine is about to dispense a gumball!")
+    time.sleep(1)
+    print(f"A {color} gumball was dispensed!")
 
 
 
