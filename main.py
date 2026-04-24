@@ -122,11 +122,17 @@ def main():
         else:
             print(f"Current High Score is: {high_score}")
 
-    #-----play again-----
-        choice = input("\nPlay Again? (y/n): ").lower()
-        if choice != 'y':
-            print("Thanks for Playing!")
-            break
+    #-----play again----- (HAD AI HELP ME FIX BROKEN LOOP WHERE ELSE: SECTION WOULD PRINT AND STILL RESTART THE GAME EVEN IF 'Y' OR 'N' WASNT INPUTTED)
+
+        while True:
+            choice = input("\nPlay Again? (y/n): ").lower()
+            if choice in ['y', 'yes']:
+                break
+            elif choice in ['n', 'no']:
+                print("Thanks for Playing!")
+                exit()
+            else:
+                print("Please enter 'y' or 'n'.")
 
 if __name__ == "__main__":
     main()
