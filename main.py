@@ -94,7 +94,10 @@ def show_title():
     print("Enter a coin to collect points,")
     print("but be weary of running out of coins!\n")
 
-
+def show_stats(player, rounds):
+    print("-" * 50)
+    print(f"Coins: {player.coins}   Score: {player.score}   Round: {rounds}/20")
+    print("-" * 50)
 
 
 
