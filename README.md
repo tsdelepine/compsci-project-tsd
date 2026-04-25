@@ -1,9 +1,24 @@
 ###
-For my Project, I plan to create a game centered around a gumball machine. My original idea that I had previously shared with you was to make it rogue-like game. But after considering my coding level, and the constraints of other class assignments, I have decided to scale down the concept to a simpler version. The project will still be a game with the central idea being a gumball machine, however, it will be more like an arcade game, where you can win or set a new high score. 
-In the game the player will click with mouse or press a key to receive a random gumball. Each gumball costs one coin, and the player will start with a limited number of coins (around 5-10 most likely.) Each gumball will have a different effect based on its color. For example, yellow gumballs will reward the player with additional coins, blue will subtract coins, and red and green will increase the players score, by varying amounts etc. Players must manage their coins to make it as far as possible, either to set a new high score, or make it to the final rounds and win.
-The main objective of the game is to survive for 20 rounds, while achieving the highest score they can, without running out of coins, causing them not to be able to continue. Alternatively, I may make it where it’s not by rounds, and they must achieve a specific score to win, it depends on how it goes while coding.
-I plan to make this game by using the pygame resources you have provided for us, as well as other external sources such as YouTube tutorials that I find while coding as necessary. I haven’t had the opportunity to find specific links to provide right now, but I will link them as references once I do. 
-As for presenting my project, I’d like to demonstrate the game being played and explain how the mechanics of the game work, as well as showing how some of the code works, for the random gumballs, and how I end up tracking the score.
+Gumball Machine Game:
+-----------------------------------------------------------------------------------------------------------------------------------------------
+How to Run:
+
+1:Have python installed
+2:Open a terminal in this folder
+3:Run : python main.py
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Description:
+
+This is a text based game where the player uses coins in a gumball machine to test their luck. In doing so the player will gain or lose coins, and score points. The goal is to make it through all 20 rounds and get the highest score they can. I orignaly intended on use pygame or tkinter but due to technical issues, and personal time constraints, I made it work as best I could, and be as polished as possible for a text based game. I hope you enjoy this game of chance.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Features:
+
+Randomized outcomes
+Highscore saving and loading
+Score and coin managment system
+Replay functionality
+Clean and polished text-based UI
+-----------------------------------------------------------------------------------------------------------------------------------------------
 ###
 '''
 AI Reflection:
