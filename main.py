@@ -104,30 +104,32 @@ def show_gumball(color):
     time.sleep(1)
     print(f"A {color} gumball was dispensed!")
 
+def game_over(player, high_score):
+    print("\n" + "=" * 50)
+    print("GAME OVER".center(50))
+    print("=" * 50)
+    print(f"Final Score: {player.score}")
 
+    if player.score > high_score:
+        print("NEW HIGHSCORE!!!")
+    else:
+        print(f"High Score: {high_score}")
 
+#------Game loop part 1-----
 
-
-
-
-
-
-
-
-
-
-
-#------Game loop-----
 def main():
-    while True:
+    playing = True
 
+    while playing:
         player = Player()
         machine = Machine()
         rounds = 0
         high_score = load_high_score()
 
-        print("Welcome to my Game!")
+        show_title()
         print(f"High Score: {high_score}\n")
+
+    #------GAME LOOP part 2-----
 
         while player.coins > 0 and rounds < 20:
             input("Press ENTER to play... COST: 1 coin")
@@ -135,23 +137,18 @@ def main():
             player.add_coins(-1) #have to pay coins to play
             gumball = machine.dispense()
 
-            print(f"\nYou got a {gumball.color} gumball!")
+            show_gumball(gumball.color)
             gumball.effect(player)
 
-            print(f"Coins: {player.coins} - Score: {player.score}\n")
-
             rounds += 1
+            show_stats(player, rounds)
 
-    #-----game over-----
+    #-----THE END-----
 
-        print("Game Over!")
-        print(f"Final Sore: {player.score}")
+        game_over(player, high_score)
 
         if player.score > high_score:
-            print("NEW HIGH SCORE!!!")
             save_high_score(player.score)
-        else:
-            print(f"Current High Score is: {high_score}")
 
     #-----play again----- (HAD AI HELP ME FIX BROKEN LOOP WHERE ELSE: SECTION WOULD PRINT AND STILL RESTART THE GAME EVEN IF 'Y' OR 'N' WASNT INPUTTED)
 
