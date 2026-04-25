@@ -10,21 +10,28 @@ functions for each game mechanic (dispensing, scoring, coin management).
 The 20-round structure gives you a clear game loop to work with. Consider adding visual polish (animations, sound effects) as stretch goals 
 after the core mechanics work.
 '''
-
-#used google AI to find this code to verify pygame is working
-# import pygame
-# pygame.init()
-# screen = pygame.display.set_mode((400, 300))
-# pygame.display.set_caption("Pygame in VS Code")
-# running = True
-# while running:
-#     for event in pygame.event.get():
-#         if event.type == pygame.QUIT:
-#             running = False
-# pygame.quit()
+#####################################################
+# Resources Used:
+#https://python-text-adventure.readthedocs.io/en/latest/part3.html#next-up
+#https://www.youtube.com/watch?v=FfWpgLFMI7w
+#https://chatgpt.com/
+#https://www.youtube.com/watch?v=Qj3GlL5ckQA
+#https://www.w3schools.com/python/
+#https://www.youtube.com/watch?v=dpioxiTTAeo
+#####################################################
 
 import random
 import time
+
+#-----COLORS FOR TERMINAL----- USED VIDEO IN THE RESOURCE SECTION FOR THIS
+
+class Colors:
+    RED = "\033[31m"
+    GREEN = "\033[32m"
+    YELLOW = "\033[33m"
+    BLUE = "\033[34m"
+    RESET = "\033[0m"
+    BOLD = "\033[1m"
 
 #-----Class: Player-----
 class Player:
@@ -60,19 +67,19 @@ class Machine:
 #-----Effects-----
     def give_coins(self, player):
         player.add_coins(3)
-        print("You gained 3 coins!")
+        print(f"{Colors.GREEN} You gained 3 coins!{Colors.RESET}")
     
     def lose_coins(self, player):
         player.add_coins(-2)
-        print("You lost 2 coins!")
+        print(f"{Colors.RED} You lost 2 coins!{Colors.RESET}")
     
     def small_score(self, player):
         player.add_score(10)
-        print("Score increased by 10!")
+        print(f"{Colors.YELLOW} Score increased by 10!{Colors.RESET}")
 
     def big_score(self, player):
         player.add_score(20)
-        print("Score increased by 20!")
+        print(f"{Colors.BLUE} Score increased by 20!{Colors.RESET}")
 
 #-----File I/O----- (USED AI TO HELP FIX ERRORS I COULDNT SEE)
 def load_high_score():
@@ -88,9 +95,9 @@ def save_high_score(score):
 
 #-----UI and display / extra ideas-----
 def show_title():
-    print("=" * 50)
+    print(Colors.BOLD + "=" * 50)
     print("TEST YOUR LUCK WITH THE GUMBALL GAME".center(50))
-    print("=" * 50)
+    print("=" * 50 + Colors.RESET)
     print("Enter a coin to collect points,")
     print("but be weary of running out of coins!\n")
 
@@ -102,7 +109,15 @@ def show_stats(player, rounds):
 def show_gumball(color):
     print("\n The Machine is about to dispense a gumball!")
     time.sleep(1)
-    print(f"A {color} gumball was dispensed!")
+
+    if color == "Yellow":
+        print(f"{Colors.YELLOW} A Yellow gumball was dispensed!{Colors.RESET}")
+    elif color == "Blue":
+        print(f"{Colors.BLUE} A Blue gumball was dispensed!{Colors.RESET}")
+    elif color == "Red":
+        print(f"{Colors.RED} A Red gumball was dispensed!{Colors.RESET}")
+    elif color == "Green":
+         print(f"{Colors.GREEN} A Green gumball was dispensed!{Colors.RESET}")
 
 def game_over(player, high_score):
     print("\n" + "=" * 50)
