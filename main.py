@@ -1,13 +1,14 @@
 
-#####################################################
-# Resources Used:
+################################################################################################################
+#Resources Used:
 #https://python-text-adventure.readthedocs.io/en/latest/part3.html#next-up
 #https://www.youtube.com/watch?v=FfWpgLFMI7w
 #https://chatgpt.com/
 #https://www.youtube.com/watch?v=Qj3GlL5ckQA
 #https://www.w3schools.com/python/
 #https://www.youtube.com/watch?v=dpioxiTTAeo
-#####################################################
+################################################################################################################
+
 
 import random
 import time
